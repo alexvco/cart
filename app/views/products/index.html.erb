@@ -1,0 +1,19 @@
+<p><%= notice %></p>
+
+<h1>Products</h1>
+
+<h2><%= link_to "View Cart", shopping_carts_path %></h2>
+
+<br>
+
+<% @products.each do |product| %>
+  <h3><%= product.name %></h3>
+  <p>Price: <%= product.price %></p>
+  <%= form_with url: update_quantity_path(product.id), method: :patch do |f| %>
+    <%= f.label "Quantity: " %>
+    <%= f.text_field :product_quantity %> <br><br>
+    <%= f.submit "Add to Cart" %>
+  <% end %>
+  <br>
+  <br>
+<% end %>

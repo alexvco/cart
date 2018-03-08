@@ -1,0 +1,10 @@
+<h1>My Shopping Cart</h1>
+
+
+<% @myproducts.each do |psc| %>
+  <h4><%= psc.product.name %> x <%= psc.product_quantity %></h4>
+<% end %>
+
+
+
+<%= link_to "Back to Products", root_path %>
